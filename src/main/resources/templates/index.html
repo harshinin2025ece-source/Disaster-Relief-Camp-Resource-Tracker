@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disaster Relief Camp Tracker</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<header>
+    <h1>Disaster Relief Camp Tracker</h1>
+</header>
+
+<div class="container">
+    <!-- Forms Section -->
+    <div class="forms-section">
+        <!-- 1. Register Camp -->
+        <section class="card">
+            <h2>Register Camp</h2>
+            <form id="campForm">
+                <input type="text" id="campName" placeholder="Camp Name" required>
+                <input type="text" id="campLocation" placeholder="Location" required>
+                <input type="number" id="campCapacity" placeholder="Max Capacity" required>
+                <button type="submit">Register Camp</button>
+            </form>
+        </section>
+
+        <!-- 2. Log Supply -->
+        <section class="card">
+            <h2>Log Incoming Supplies</h2>
+            <form id="supplyForm">
+                <select id="supplyCampId" required>
+                    <option value="">Select Camp</option>
+                </select>
+                <input type="text" id="supplyName" placeholder="Supply Name (e.g., Blankets)" required>
+                <input type="text" id="supplyType" placeholder="Type (Food, Water, etc.)" required>
+                <input type="number" id="supplyQuantity" placeholder="Quantity" required>
+                <button type="submit">Log Supply</button>
+            </form>
+        </section>
+
+        <!-- 3. Register Family -->
+        <section class="card">
+            <h2>Register Family</h2>
+            <form id="familyForm">
+                <select id="familyCampId" required>
+                    <option value="">Select Camp</option>
+                </select>
+                <input type="text" id="familyHead" placeholder="Head of Family Name" required>
+                <input type="text" id="familyContact" placeholder="Contact Info" required>
+                <input type="number" id="familyHeadcount" placeholder="Headcount" required>
+                <button type="submit">Register Family</button>
+            </form>
+        </section>
+
+        <!-- 4. Distribute Supplies -->
+        <section class="card">
+            <h2>Distribute Supplies</h2>
+            <form id="distributionForm">
+                <select id="distCampId" required>
+                    <option value="">Select Camp</option>
+                </select>
+                <select id="distFamilyId" required>
+                    <option value="">Select Family</option>
+                </select>
+                <select id="distSupplyId" required>
+                    <option value="">Select Supply</option>
+                </select>
+                <input type="number" id="distQuantity" placeholder="Quantity to Distribute" required>
+                <button type="submit">Distribute</button>
+            </form>
+        </section>
+    </div>
+
+    <!-- Dashboard Section -->
+    <div class="dashboard-section">
+        <section class="card">
+            <h2>Current Camps Overview</h2>
+            <table id="campsTable">
+                <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Location</th>
+                    <th>Capacity</th>
+                    <th>Current Occupancy</th>
+                </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </section>
+        <section class="card">
+            <h2>Registered Families</h2>
+            <table id="familiesTable">
+                <thead>
+                <tr>
+                    <th>Camp ID</th>
+                    <th>Head of Family</th>
+                    <th>Contact</th>
+                    <th>Headcount</th>
+                    <th>Actions</th>
+                </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </section>
+
+        <section class="card">
+            <h2>Inventory Levels</h2>
+            <table id="suppliesTable">
+                <thead>
+                <tr>
+                    <th>Camp ID</th>
+                    <th>Supply Name</th>
+                    <th>Type</th>
+                    <th>Quantity Available</th>
+                </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </section>
+    </div>
+</div>
+
+<script src="/script.js"></script>
+</body>
+</html>
